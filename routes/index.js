@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-//var gpio = require("pi-gpio");
+var gpio = require("pi-gpio");
 
 /* GET home page. */
 
