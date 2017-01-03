@@ -20,7 +20,8 @@ router.get('/On', function(req, res, next) {
 
   res.render('index', { title: 'Express' });
 });
-router.get('/Off/:id', function(req, res, next) {
+
+router.get('/Off', function(req, res, next) {
  
 	gpio.open(req.query.id, "output", function(err) {		// Open pin 16 for output 
 	    gpio.write(req.query.id, 0, function() {			// Set pin 16 high (1) 
