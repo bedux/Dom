@@ -15,7 +15,7 @@ router.get('/On', function(req, res, next) {
 	gpio.open(req.query.id, "output", function(err) {		// Open pin 16 for output 
 	    console.log(err);
 	    gpio.write(req.query.id, 1, function() {			// Set pin 16 high (1) 
-	        gpio.close(req.query.id);						// Close pin 16 
+	       // gpio.close(req.query.id);						// Close pin 16 
 	    });
 	});
 
@@ -28,7 +28,7 @@ router.get('/Off', function(req, res, next) {
 		    console.log(err);
 		// Open pin 16 for output 
 	    gpio.write(req.query.id, 0, function() {			// Set pin 16 high (1) 
-	        gpio.close(req.query.id);						// Close pin 16 
+	        //gpio.close(req.query.id);						// Close pin 16 
 	    });
 	});
 
