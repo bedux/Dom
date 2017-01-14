@@ -25,7 +25,6 @@ http.listen(3001,function () {
 function getImage() {
   request.get("http://192.168.0.102:3001/image/jpeg.cgi", function (err, res, body) {
     io.emit('newImage', new Buffer(body).toString('base64'));
-    console.log("newMsg");
     getImage();
 
   });
