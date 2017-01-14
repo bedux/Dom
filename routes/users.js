@@ -10,11 +10,11 @@ var request = require('request').defaults({ encoding: null});
 var cameras = [
   {
   name:"WebCam1",
-  localAddress:"http://192.168.0.102:3001/image/jpeg.cgi",
+  localAddress:"http://192.168.0.102:3001/image/jpeg.cgi"
 },
   {
     name:"WebCam2",
-    localAddress:"http://192.168.0.103/image/jpeg.cgi",
+    localAddress:"http://192.168.1.6/image/jpeg.cgi"
   },
 ]
 

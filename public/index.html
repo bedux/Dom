@@ -2,9 +2,17 @@
 <head>
     <script src="js/socket.io.js"></script>
     <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="css/bootstrap.min.css"></script>
 
 </head>
+<style>
+    img{
+
+        width: 400px;
+        height:400px;
+
+    }
+
+</style>
 <body>
 <div class=" content" style="display: flex; flex-wrap: wrap" width="100%" height="100%">
 
@@ -18,7 +26,7 @@
 
     $.get( "/users", function( data ) {
         for(var i in data){
-            $(".content").append('<img  id="'+data[i].name +'" width="320px"/>');
+            $(".content").append('<img  id="'+data[i].name +'" />');
         }
 
     });
