@@ -55,7 +55,7 @@ function clos(info){
     }
   }
 }
-setInterval(getImage,35);
+setInterval(getImage,300);
 
 
 module.exports = router;
