@@ -1,0 +1,15 @@
+<html>
+<head></head>
+<body>
+<script src="js/socket.io.js"></script>
+<script>
+    var socket = io.connect("http://127.0.0.1:3001");
+
+    socket.on('newImage', function(msg){
+            document.getElementById("image1").src = "data:image/png;base64,"+msg;
+    });
+</script>
+</body>
+<img  width="300px" height="300px" id="image1" />
+
+</html>
