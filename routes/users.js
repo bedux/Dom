@@ -47,6 +47,11 @@ function clos(info){
   return function (err, res, body) {
     try {
       io.emit("NewImage", {Name: info.name, Data: new Buffer(body).toString('base64')});
+    }catch(e) {
+
+    }
+    finally {
+
     }
   }
 }
