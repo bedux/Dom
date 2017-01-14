@@ -45,10 +45,12 @@ function getImage() {
 function clos(info){
 
   return function (err, res, body) {
-    io.emit("NewImage",{Name: info.name,Data: new Buffer(body).toString('base64')});
+    try {
+      io.emit("NewImage", {Name: info.name, Data: new Buffer(body).toString('base64')});
+    }
   }
 }
-setInterval(getImage,100);
+setInterval(getImage,35);
 
 
 module.exports = router;
