@@ -16,6 +16,22 @@ var cameras = [
     name:"WebCam2",
     localAddress:"http://192.168.1.6/image/jpeg.cgi"
   },
+  {
+    name:"WebCam3",
+    localAddress:"http://192.168.0.102:3001/image/jpeg.cgi"
+  },
+  {
+    name:"WebCam4",
+    localAddress:"http://192.168.1.6/image/jpeg.cgi"
+  },
+  {
+    name:"WebCam5",
+    localAddress:"http://192.168.0.102:3001/image/jpeg.cgi"
+  },
+  {
+    name:"WebCam6",
+    localAddress:"http://192.168.1.6/image/jpeg.cgi"
+  },
 ]
 
 /* GET users listing. */
