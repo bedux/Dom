@@ -6,9 +6,21 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var request = require('request').defaults({ encoding: null});
 
+
+var cameras = [
+  {
+  name:"WebCam1",
+  localAddress:"http://192.168.0.102:3001/image/jpeg.cgi",
+},
+  {
+    name:"WebCam2",
+    localAddress:"http://192.168.0.103/image/jpeg.cgi",
+  },
+]
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.json(cameras);
 });
 
 io.on('connection', function(socket){
@@ -23,14 +35,20 @@ http.listen(3001,function () {
 
 
 function getImage() {
-  request.get("http://192.168.0.102:3001/image/jpeg.cgi", function (err, res, body) {
-    io.emit('newImage', new Buffer(body).toString('base64'));
-    getImage();
-
-  });
+  for(var i in cameras ){
+    request.get(cameras[i].localAddress,
+        clos(cameras[i])
+    );
+  }
 }
 
-getImage();
+function clos(info){
+
+  return function (err, res, body) {
+    io.emit("NewImage",{Name: info.name,Data: new Buffer(body).toString('base64')});
+  }
+}
+setInterval(getImage,100);
 
 
 module.exports = router;
