@@ -3,7 +3,7 @@
 <body>
 <script src="js/socket.io.js"></script>
 <script>
-    var socket = io.connect("http://127.0.0.1:3001");
+    var socket = io.connect("http://192.168.0.104:3001");
 
     socket.on('newImage', function(msg){
             document.getElementById("image1").src = "data:image/png;base64,"+msg;
